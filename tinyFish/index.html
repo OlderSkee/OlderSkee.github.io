@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-top: 10px;
+        }
+        .all-bg{
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            position: relative;
+
+        }
+        #allcanvas{
+            width: 800px;
+            height: 600px;
+            position: relative;
+
+        }
+        #canvas1{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        #canvas2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+
+        }
+        #beginBox{
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 2;
+        }
+        #btn1,#btn2{
+            color: #E4E4E4;;
+            border: 0 none;
+            background-color: #06335C;
+            width: 90px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: 70px;
+            margin-left: -45px;
+            font:700 25px "microsoft yahei";
+            z-index: 2;
+        }
+        #btn2{
+            background-color: #09508E;
+            width: 150px;
+            margin-left: -75px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="all-bg">
+    <div id="allcanvas">
+        <canvas id="canvas1" width="800" height="600"></canvas>
+        <canvas id="canvas2" width="800" height="600"></canvas>
+    </div>
+    <div id="beginBox">
+        <img src="src/cover.png" alt=""/>
+        <button id="btn1"> &nbsp;Start&nbsp;</button>
+    </div>
+    <button id="btn2" style="display: none;">Play Again</button>
+</div>
+<script src="js/begin.js"></script>
+<script src="js/main.js"></script>
+<script src="js/commonFunctions.js"></script>
+<script src="js/background.js"></script>
+<script src="js/ane.js"></script>
+<script src="js/fruit.js"></script>
+<script src="js/mom.js"></script>
+<script src="js/collision.js"></script>
+<script src="js/baby.js"></script>
+<script src="js/data.js"></script>
+<script src="js/wave.js"></script>
+<script src="js/halo.js"></script>
+<script src="js/dust.js"></script>
+</body>
+</html>
