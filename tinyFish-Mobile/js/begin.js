@@ -4,14 +4,10 @@
 
 document.body.onload = begin();
 
-if ('addEventListener' in document) {
-    document.addEventListener('DOMContentLoaded', function() {
-        FastClick.attach(document.body);
-    }, false);
-}
 
 function begin(){
     var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
 
     var cover =document.getElementById("beginBox")
 
@@ -19,11 +15,18 @@ function begin(){
     beginPic.setAttribute("width",client().width)
     beginPic.setAttribute("height",client().height)
 
+
+
+    btn1.style.fontSize= client().width*0.03+"px"
+    btn2.style.fontSize= client().width*0.03+"px"
+
+    console.log(btn1.style.fontSize)
+
         btn1.addEventListener("click",function () {
 
             cover.style.display = "none";
             gameStart =true;
-            init()
+            init();
         console.log("Made By OlerSkee")
         })
 

@@ -29,6 +29,7 @@ dataObj.prototype.init = function () {
 dataObj.prototype.draw = function () {
     var h = can1.height;
     var w = can1.width;
+    cxt1.textAlign ="center"
     cxt1.save();
 
     cxt1.shadowBlur = 5;
@@ -36,10 +37,10 @@ dataObj.prototype.draw = function () {
     cxt1.fillStyle = "white";
 
 
-    cxt1.font = "30px Verdana";
-    cxt1.fillText("Score "+this.score, w * 0.5 - 70, h - 20);
+    cxt1.font = ""+canWidth*0.02+"px Verdana";
+    cxt1.fillText("Score "+this.score, w * 0.5 , h - 20);
 
-    cxt1.font = "16px Verdana";
+    cxt1.font = ""+canWidth*0.02+"px Verdana";
     cxt1.fillText(this.orangeNum, w * 0.5-20, h - 55);
     cxt1.fillText(this.blueNum, w * 0.5+50, h - 55);
 
@@ -50,8 +51,8 @@ dataObj.prototype.draw = function () {
             this.alpha = 1;
         }
         cxt1.fillStyle = "rgba(255,255,255,"+ this.alpha +")";
-        cxt1.font = "50px Verdana";
-        cxt1.fillText("GAME OVER", w * 0.5 - 160, h * 0.5);
+        cxt1.font = ""+canWidth*0.05+"px Verdana";
+        cxt1.fillText("GAME OVER", w * 0.5 , h * 0.5);
     }
     cxt1.restore();
 

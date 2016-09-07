@@ -1,6 +1,7 @@
 /**
  * Created by zdx on 2016/9/6.
  */
+
 var can1;
 var can2;
 
@@ -55,6 +56,7 @@ function init() {
 
     canWidth = can1.width;
     canHeight = can1.height;
+
 
     ane = new aneObj();
     ane.init();

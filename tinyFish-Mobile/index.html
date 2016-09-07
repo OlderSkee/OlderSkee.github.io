@@ -60,20 +60,31 @@
             color: #E4E4E4;;
             border: 0 none;
             background-color: #06335C;
-            width: 90px;
             position: absolute;
             left: 50%;
             top: 50%;
-            margin-top: 70px;
-            margin-left: -45px;
-            font:700 25px "microsoft yahei";
+            margin-top: 40px;
+            margin-left: -25px;
+            font-family: "microsoft yahei";
             z-index: 2;
         }
         #btn2{
             background-color: #09508E;
-            width: 150px;
-            margin-left: -75px;
+            margin-left: -35px;
             margin-top: 50px;
+        }
+        #black{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #000;
+            z-index: 3;
+            text-align: center;
+            color: #ccc;
+            font: 400 50px/50px "microsoft yahei";
+            padding-top: 50%;
         }
     </style>
 </head>
@@ -88,8 +99,47 @@
         <button id="btn1"> &nbsp;Start&nbsp;</button>
     </div>
     <button id="btn2" style="display: none;">Play Again</button>
+    <div id="black">
+        请旋转屏幕
+    </div>
 </div>
+<script>
+    var orientation=0;
+    //转屏事件，内部功能可以自定义
+    function screenOrientationEvent(){
 
+            if (orientation == 0) {
+                var black = document.getElementById("black");
+                black.style.display = "block";
+            }
+            else {
+                var black = document.getElementById("black");
+                black.style.display = "none";
+
+                begin();
+            }
+    }
+
+    var innerWidthTmp = window.innerWidth;
+    //横竖屏事件监听方法
+    function screenOrientationListener(){
+        try{
+            var iw = window.innerWidth;
+            //屏幕方向改变处理
+            if(iw != innerWidthTmp){
+                if(iw>window.innerHeight)orientation = 90;
+                else orientation = 0;
+                //调用转屏事件
+                screenOrientationEvent();
+                innerWidthTmp = iw;
+            }
+        } catch(e){alert(e);};
+        //间隔固定事件检查是否转屏，默认500毫秒
+        setTimeout("screenOrientationListener()",500);
+    }
+    //启动横竖屏事件监听
+        screenOrientationListener();
+</script>
 <script src="js/begin.js"></script>
 <script src="js/main.js"></script>
 <script src="js/commonFunctions.js"></script>
