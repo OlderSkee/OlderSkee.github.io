@@ -114,9 +114,11 @@
             }
             else {
                 var black = document.getElementById("black");
-                black.style.display = "none";
-
                 begin();
+                black.innerHTML = "加载中……"
+                setTimeout(function () {
+                    black.style.display = "none";
+                },5000)
             }
     }
 

@@ -4,6 +4,11 @@
 
 document.body.onload = begin();
 
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
 
 function begin(){
     var btn1 = document.getElementById("btn1");
