@@ -21,9 +21,7 @@
             cursor: pointer;
             position: absolute;
             left: 50%;
-            top: 50%;
             margin-left: -225px;
-            margin-top: -225px;
 
         }
         .box{
@@ -36,9 +34,11 @@
 </head>
 <body>
 <div class="box">
-    五子棋
+    <div class="top">
+    <span>五子棋</span>
     <button id="btn">开始</button>
     <button id="last">后手</button>
+    </div>
     <canvas id="canvas" width="450" height="450"></canvas>
     <script src="js/index.js"></script>
 </div>
