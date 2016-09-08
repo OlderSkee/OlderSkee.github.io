@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>五子棋</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+
+        }
+        #canvas{
+            display: block;
+            border: 2px solid #ccc;
+            margin: 0 auto;
+            box-shadow: 0 0 15px grey;
+            cursor: pointer;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -225px;
+            margin-top: -225px;
+
+        }
+        .box{
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            line-height: 60px;
+        }
+        #btn{
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    五子棋
+    <button id="btn">开始</button>
+    <button id="last">后手</button>
+    <canvas id="canvas" width="450" height="450"></canvas>
+    <script src="js/index.js"></script>
+    <script>
+        var btn = document.getElementById("btn");
+        var last = document.getElementById("last");
+
+        btn.onclick = function(){
+            document.location.reload();
+        };
+
+
+        last.addEventListener("click",computerFirst)
+
+        function computerFirst() {
+
+            for (var i = 0; i < 15; i++) {
+                for (var j = 0; j < 15; j++) {
+                    if (allStep[i][j] != 0) {
+                        last.removeEventListener("click", computerFirst);
+                        return;
+                    }
+                }
+            }
+            drawStep(7,7,false);
+            allStep[7][7] = 2;
+
+        };
+
+
+
+    </script>
+</div>
+</body>
+</html>
