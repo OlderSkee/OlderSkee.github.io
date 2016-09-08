@@ -32,8 +32,6 @@
             text-align: center;
             line-height: 60px;
         }
-        #btn{
-        }
     </style>
 </head>
 <body>
@@ -43,35 +41,6 @@
     <button id="last">后手</button>
     <canvas id="canvas" width="450" height="450"></canvas>
     <script src="js/index.js"></script>
-    <script>
-        var btn = document.getElementById("btn");
-        var last = document.getElementById("last");
-
-        btn.onclick = function(){
-            document.location.reload();
-        };
-
-
-        last.addEventListener("click",computerFirst)
-
-        function computerFirst() {
-
-            for (var i = 0; i < 15; i++) {
-                for (var j = 0; j < 15; j++) {
-                    if (allStep[i][j] != 0) {
-                        last.removeEventListener("click", computerFirst);
-                        return;
-                    }
-                }
-            }
-            drawStep(7,7,false);
-            allStep[7][7] = 2;
-
-        };
-
-
-
-    </script>
 </div>
 </body>
 </html>
