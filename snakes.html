@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>贪吃蛇</title>
+    <style media="screen">
+        .mainDiv {
+            border: 1px solid black;
+            font-size: 0px;
+        }
+
+        .scoreDiv {
+            margin: 20px auto;
+            width: 200px;
+            text-align: center;
+        }
+
+        .col {
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            background: #efefef;
+            display: inline-block;
+        }
+
+        .Snake {
+            background: red;
+            border: 1px solid white;
+        }
+
+        .egg {
+            background: blue;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+
+<body>
+<div class="scoreDiv">得分：0</div>
+<div class="mainDiv"></div>
+</body>
+<script type="text/javascript">
+    var mainDiv = document.querySelector(".mainDiv");
+
+    var scoreDiv = document.querySelector(".scoreDiv"); //取得分的div对象
+    var score = 0;
+
+    var rowNum = 18; //行
+    var colNum = 20; //列
+    var canvasArray = [];
+    var time = 400; //毫秒
+    for(var i = 0; i < rowNum; i++) {
+        var rowDiv = document.createElement("div");
+        var rowArry = [];
+        for(var j = 0; j < colNum; j++) {
+            var colDiv = document.createElement("div");
+            colDiv.className = "col";
+            rowArry.push(colDiv);
+            rowDiv.appendChild(colDiv);
+        }
+        canvasArray.push(rowArry);
+        mainDiv.appendChild(rowDiv);
+    }
+    mainDiv.style.width = colNum * 40 + colNum * 2 * 1 + "px";
+    mainDiv.style.margin = "auto";
+
+    var snakebody = []; //定义一个数组存放蛇身
+    var direction = "right"; //操作蛇移动的方向
+    //创建蛇的初始模型
+    function snake() {
+        for(var i = 0; i < 3; i++) {
+            canvasArray[0][i].className = "col Snake";
+            snakebody.push(canvasArray[0][i]);
+        }
+    }
+    snake();
+
+    var delayTime = null;
+    var changeDir = true;
+    //添加键盘事件监听方向键来改变蛇的移动方向
+    document.onkeydown = function(event) {
+        event = event || window.event;
+        //判断是否需要改变方向，true表示需要 false不需要
+        if(!changeDir) {
+            return; //表示直接结束函数，后续代码不执行
+        }
+        //假设蛇在向右移动，按键左右都不起作用
+        if(direction == "right" && event.keyCode == "37") {
+            return;
+        }
+        if(direction == "left" && event.keyCode == "39") {
+            return;
+        }
+        if(direction == "down" && event.keyCode == "38") {
+            return;
+        }
+        if(direction == "up" && event.keyCode == "40") {
+            return;
+        }
+        //更据按键操作，设置方向
+        switch(event.keyCode) {
+            case 37:
+                direction = "left"; //方向向左
+                break;
+            case 38:
+                direction = "up";
+                break;
+            case 39:
+                direction = "right";
+                break;
+            case 40:
+                direction = "down";
+                break;
+        }
+        //按键后变为false
+        changeDir = false;
+        //延迟
+        delayTime = setTimeout(function() {
+            changeDir = true;
+        }, time);
+    }
+    //蛇的移动偏移量
+    var x = 2;
+    var y = 0;
+    //蛇的移动函数
+    function snakeMove() {
+        var snameTimer = setInterval(function() {
+            //更据设置的方向设置蛇头的方向
+            switch(direction) {
+                case "right":
+                    x++;
+                    break;
+                case "left":
+                    x--;
+                    break;
+                case "up":
+                    y--;
+                    break;
+                case "down":
+                    y++;
+                    break;
+            }
+            //判断游戏结束－－碰壁
+            if(x < 0 || x >= colNum || y < 0||  y >= rowNum) {
+                alert("game over");
+                clearInterval(snameTimer);
+                return;
+            }
+            //判断蛇吃到自己
+            for(var i = 0; i < snakebody.length; i++) {
+                if(snakebody[i] == canvasArray[y][x]) {
+                    alert("game over");
+                    clearInterval(snameTimer);
+                    return;
+                }
+            }
+            //判断蛇头移动的位置是否有蛋
+            if(eggX == x && eggY == y) {
+                canvasArray[eggY][eggX].className = "col Snake";
+                snakebody.push(canvasArray[eggY][eggX]); //加入到蛇身
+                score++;
+                scoreDiv.innerHTML = "得分:" + score;
+                jfy();
+            } else {
+                snakebody[0].className = "col";
+                snakebody.shift();
+                canvasArray[y][x].className = "col Snake";
+                snakebody.push(canvasArray[y][x]);
+            }
+        }, time);
+    }
+    snakeMove();
+    //随机函数
+    function a(max) {
+        var ran = Math.floor(Math.random() * max);
+        return ran;
+    }
+    //生成蛋的函数
+    function jfy() {
+        //随机出新的egg的下标的x和y
+        eggX = a(colNum);
+        eggY = a(rowNum);
+        //如果即将生蛋的位置和蛇身重合
+        if(canvasArray[eggY][eggX].className == "col Snake") {
+            jfy(); //重新生成
+        } else {
+            //否则 新生生蛋的位置并改样式
+            canvasArray[eggY][eggX].className = "col egg";
+        }
+    }
+    jfy();
+</script>
+</html>
