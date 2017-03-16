@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<style>
+    div,body{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: #666666;
+        color:#000;
+        position: relative;
+    }
+    html,body{
+        width: 100%;
+        height: 100%;
+
+    }
+    div {
+        height: 35%;
+        background-color: #000;
+        position: absolute;
+        text-align: right;
+    }
+    .mainbox{
+        width: 22%;
+    }
+
+    #box{
+        width: 50%;
+        height: auto;
+        background-color: #ababab;
+        position: fixed;
+        left: 24%;
+        top: 50px;
+        text-align: left;
+        text-indent: 2em;
+        padding: 25px 20px;
+        font-size: 18px;
+    }
+
+    .span1{
+        margin-right: 10px;
+        float: right;
+        font-size: 25px;
+        color: white;
+    }
+    .span01{
+        float: left;
+        margin-left: 10px;
+        font-size: 25px;
+        color: white;
+
+    }
+    #box1 {
+        background:url("img/小阳星.png") no-repeat ;
+        background-size: contain;
+        top: 0;
+        left: 0;
+
+    }
+    #box2 {
+        background:url("img/小阳线.png") no-repeat;
+        background-size: contain;
+        top: 250px;
+        left: 0;
+    }
+    #box3{
+        background:url("img/上吊阳线.png") no-repeat;
+        background-size: contain;
+        top: 500px;
+        left: 0;
+    }
+    #box4{
+        background:url("img/上影阳线.png") no-repeat;
+        background-size: contain;
+        top: 750px;
+        left: 0;
+    }
+    #box5{
+        background:url("img/下影阳线.png") no-repeat;
+        background-size: contain;
+        top:1000px;
+        left: 0;
+    }
+    #box6{
+        background:url("img/穿头破脚阳线.png") no-repeat;
+        background-size: contain;
+        top:1250px;
+        left: 0;
+    }
+    #box7{
+        background:url("img/光头阳线.png") no-repeat;
+        background-size: contain;
+        top:1500px;
+        left: 0;
+    }
+    #box8{
+        background:url("img/光脚阳线.png") no-repeat;
+        background-size: contain;
+        top:1750px;
+        left: 0;
+    }
+    #box9{
+        background:url("img/光头光脚阳线.png") no-repeat;
+        background-size: contain;
+        top:2000px;
+        left: 0;
+    }
+
+
+
+
+    #box10 {
+        background:url("img/小阴星.png") no-repeat right top;
+        background-size: contain;
+        top: 0;
+        right: 0;
+
+    }
+    #box11 {
+        background:url("img/小阴线.png") no-repeat right top;
+        background-size: contain;
+        top: 250px;
+        right: 0;
+    }
+    #box12{
+        background:url("img/上吊阴线.png") no-repeat right top;
+        background-size: contain;
+        top: 500px;
+        right: 0;
+    }
+    #box13{
+        background:url("img/上影阴线.png") no-repeat right top;
+        background-size: contain;
+        top: 750px;
+        right: 0;
+    }
+    #box14{
+        background:url("img/下影阴线.png") no-repeat right top;
+        background-size: contain;
+        top:1000px;
+        right: 0;
+    }
+    #box15{
+        background:url("img/穿头破脚阴线.png") no-repeat right top;
+        background-size: contain;
+        top:1250px;
+        right: 0;
+    }
+    #box16{
+        background:url("img/光头阴线.png") no-repeat right top;
+        background-size: contain;
+        top:1500px;
+        right: 0;
+    }
+    #box17{
+        background:url("img/光脚阴线.png") no-repeat right top;
+        background-size: contain;
+        top:1750px;
+        right: 0;
+    }
+    #box18{
+        background:url("img/光头光脚阴线.png") no-repeat right top;
+        background-size: contain;
+        top:2000px;
+        right: 0;
+    }
+    #box19{
+        background:url("img/变盘十字星.png") no-repeat right top;
+        background-size: contain;
+        top:2250px;
+        right: 0;
+    }
+
+</style>
+
+
+<body>
+<!--<button id="showBtn">显示</button>-->
+<!--<button id="hideBtn">隐藏</button>-->
+
+<div id="box">
+
+    <p> 1.看实体阴阳：阴阳代表趋势方向，阳线表示将继续上涨，阴线表示将继续下跌。
+    </p>
+    <p> 2.看实体大小：实体大小代表内在动力，实体越大，上涨或下跌的趋势越是明显，反之趋势则不明显。
+    </p>
+    <p> 3.看影线长短：影线代表转折信号，向一个方向的影线越长，越不利于价格或指数向这个方向变动，即上影线越长，越不利于价格或指数上涨，下影线越长，越不利于价格或指数下跌。
+    </p>
+    <p> 4.极阴线和极阳线的波动范围在0.5%左右
+    </p>
+    <p> 5.小阴线和小阳线的波动范围一般在0.6--1.5%</p>
+    <p> 6.中阴线和中阳线的波动范围一般在1.6-3.5%</p>
+    <p> 7.大阴线和大阳线的波动范围在3.6%以上</p>
+
+</div>
+<div id="box1" class="mainbox">
+    <span class="span1">1.小阳星</span>
+</div>
+<div id="box2" class="mainbox">
+    <span class="span1">2.小阳线</span>
+</div>
+<div id="box3" class="mainbox">
+    <span class="span1">3.上吊阳线</span>
+</div>
+<div id="box4" class="mainbox">
+    <span class="span1">4.上影阳线</span>
+</div>
+<div id="box5" class="mainbox">
+    <span class="span1">5.下影阳线</span>
+</div>
+<div id="box6" class="mainbox">
+    <span class="span1">6.穿头破脚阳线</span>
+</div>
+<div id="box7" class="mainbox">
+    <span class="span1">7.光头阳线</span>
+</div>
+<div id="box8" class="mainbox">
+    <span class="span1">8.光脚阳线</span>
+</div>
+<div id="box9" class="mainbox">
+    <span class="span1">9.光头光脚阳线</span>
+</div>
+
+<!--------------------------------->
+
+
+
+<div id="box10" class="mainbox">
+    <span class="span01">1.小阴星</span>
+</div>
+<div id="box11" class="mainbox">
+    <span class="span01">2.小阴线</span>
+</div>
+<div id="box12" class="mainbox">
+    <span class="span01">3.上吊阴线</span>
+</div>
+<div id="box13" class="mainbox">
+    <span class="span01">4.上影阴线、倒T形线</span>
+</div>
+<div id="box14" class="mainbox">
+    <span class="span01">5.下影阴线、下影十字T字</span>
+</div>
+<div id="box15" class="mainbox">
+    <span class="span01">6.穿头破脚阴线</span>
+</div>
+<div id="box16" class="mainbox">
+    <span class="span01">7.光头阴线</span>
+</div>
+<div id="box17" class="mainbox">
+    <span class="span01">8.光脚阴线</span>
+</div>
+<div id="box18" class="mainbox">
+    <span class="span01">9.光头光脚阴线</span>
+</div><div id="box19" class="mainbox">
+    <span class="span01">10.变盘十字星</span>
+</div>
+
+
+</body>
+</html>
+
+<script>
+    var wordArr = [
+        "1.小阳星<br/><p>全日中股价波动很小，开盘价与收盘价极其接近，收盘价略高于开盘价。小阳星的出现，表明行情正处于混乱不明的阶段，后市的涨跌无法预测，此时要根据其前期Ｋ线组合的形状以及当时所处的价位区域综合判断。</p> <img src='pic/小阳星图解.gif' style='margin-left: 120px'/>",
+        "2.小阳线<br/><p>波动范围较小阳星增大，多头稍占上风，但上攻乏力，表明行情发展扑朔迷离。</p>  <img src='pic/小阳线图解.gif' style='margin-left: 120px'/>",
+        "3.上吊阳线<br/><p>如果在低价位区域出现上吊阳线，股价表现出探底过程中成交量萎缩，随着股价的逐步攀高，成交量呈均匀放大事态，并最终以阳线报收，预示后市股价看涨。如果在高价位区域出现上吊阳线，股价走出如图所示的形态，则有可能是主力在拉高出货，需要留心。</p>  <img src='pic/上吊阳线图解.gif' style='margin-left: 120px'/>",
+        "4.上影阳线<br/><p>上影阳线显示多方攻击时上方抛压沉重。这种图形常见于主力的试盘动作，说明此时浮动筹码较多，涨势不强。</p>  <img src='pic/上影阳线图解.gif' style='margin-left: 120px'/>",
+        "5.下影阳线<br/><p>表明多空交战中多方的攻击沉稳有力，股价先跌后涨，行情有进一步上涨的潜力。</p>  <img src='pic/下影阳线图解.gif' style='margin-left: 120px'/>",
+        "6.穿头破脚线<br/>  <p>股价走出如图所示的图形说明多方已占据优势，并出现逐波上攻行情，股价在成交量的配合下稳步升高，预示后市看涨。</p><p>同样为穿头破脚阳线，股价走势若表现出在全日多数时间内横盘或者盘跌而尾市突然拉高时，预示次日可能跳空高开后低走。</p><p>还有一种情况，股价走势若表现为全日宽幅振荡尾市放量拉升收阳时，可能是当日主力通过振荡洗盘驱赶坐轿客，然后轻松拉高，后市可能继续看涨。</p><img src='pic/穿头破脚阳线图解.gif' style='margin-left: 120px'/>",
+        "7.光头阳线<br/>  <p>光头阳线若出现在低价位区域，在分时走势图上表现为股价探底后逐浪走高且成交量同时放大，预示为一轮上升行情的开始。如果出现在上升行情途中，表明后市继续看好。</p><img src='pic/光头阳线图解.jpg' style='margin-left: 120px'/>",
+        "8.光脚阳线<br/>  <p>光头阳线若出现在低价位区域，在分时走势图上表现为股价探底后逐浪走高且成交量同时放大，预示为一轮上升行情的开始。如果出现在上升行情途中，表明后市继续看好。</p><img src='pic/光脚阳线图解.jpg' style='margin-left: 120px'/>",
+        "9.光脚阳线<br/>  <p>表明多方已经牢固控制盘面，逐浪上攻，步步逼空，涨势强烈。</p><img src='pic/光头光脚阳线图解.jpg' style='margin-left: 120px'/>",
+        "1.小阴星<br/><p>表示上升势头很强，但在高价位处多空双方有分歧，购买时应谨慎。</p> <img src='pic/小阴星图解.gif' style='margin-left: 120px'/>",
+        "2.小阴线<br/><p>小阴线表示空方呈打压态势，但力度不大。</p>  <img src='pic/小阴线图解.gif' style='margin-left: 120px'/>",
+        "3.上吊阴线<br><p>收上吊阴线是卖出信号，接下来很有可能会下跌。股价经过一轮涨升后，在高位出现一条长下影、小实体的图线（阴阳不分）称为吊颈。吊颈是强烈的卖出信号。</p>  <img src='' style='margin-left: 120px'/>",
+        "4.上影阴线、倒T形线<br/><p>这两种线型中的任何一种出现在高价位区时，说明上档抛压严重，行情疲软，股价有反转下跌的可能；如果出现在中价位区的上升途中，则表明后市仍有上升空间。</p>  <img src='pic/上影阴线、倒T形线图解.jpg' style='margin-left: 120px'/>",
+        "5.下影十字星、下影阴线<br/><p>这三种线型中的任何一种出现在低价位区时，都说明下档承接力较强，股价有反弹的可能。</p>  <img src='pic/下影十字星、下影阴线、T形线图解.jpg' style='margin-left: 120px'/>",
+        "7.穿头破脚阴线<br/><p>穿头破脚大阴线一旦出现，市场信号是十分明确的，此K线说明下有支撑，上有压力，但是总体而言是空方占优势，在上升行情中出现，则意味着行情深幅地向下回挡；在下跌行情中出现，则意味着行情加速地向下惨跌。</p>  <img src='' style='margin-left: 120px'/>",
+        "7.光头阴线<br/><p>如果这种线型出现于低价位区，说明抄低盘的介入使股价有反弹迹象，但力度不大。</p>  <img src='pic/光头阴线图解.jpg' style='margin-left: 120px'/>",
+        "8.光脚阴线<br/><p>光脚阴线的出现表示股价虽有反弹，但上档抛压沉重。空方趁势打压使股价以阴线报收。</p>  <img src='pic/光脚阴线图解.jpg' style='margin-left: 120px'/>",
+        "9.光头光脚阴线<br/><p>　股价横盘一日，尾盘突然放量下攻，表明空方在一日交战中最终占据了主导优势，次日低开的可能性较大。如果股价走出如图所示的逐波下跌的行情，这说明空方已占尽优势，多方无力抵抗，股价被逐步打低，后市看淡。</p>  <img src='pic/光头光脚阴线图解.jpg' style='margin-left: 120px'/>",
+        "10.变盘十字星<br/><p>这种线型常称为变盘十字星，无论出现在高价位区或低价位区，都可视为顶部或底部信号，预示大势即将改变原来的走向。</p>  <img src='pic/变盘十字星图解.jpg' style='margin-left: 120px'/>"
+
+        ]
+//    var picArr = ["url('pic/小阳星图解.gif') no-repeat"]
+   var showBox = document.getElementsByClassName("mainbox");
+   var textBox = document.getElementById("box");
+
+    for (var i=0;i<showBox.length;i++){
+       showBox[i].index = i;
+        showBox[i].onclick= function () {
+//            textBox.style.background = picArr[this.index];
+            textBox.style.backgroundColor = "#ababab";
+            textBox.style.backgroundSize = "70%"
+            textBox.style.backgroundPosition = "70px 170px";
+            textBox.innerHTML = wordArr[this.index]
+
+        }
+    }
+</script>
